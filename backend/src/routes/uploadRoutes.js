@@ -1,16 +1,12 @@
 import { Router } from 'express';
 import multer from 'multer';
 import { randomUUID } from 'node:crypto';
-import { mkdirSync } from 'node:fs';
-import path from 'node:path';
-import { fileURLToPath } from 'node:url';
 import { requireAuth } from '../middleware/auth.js';
 import { requirePermission } from '../middleware/authorize.js';
 import { HttpError } from '../utils/httpError.js';
+import { uploadDir } from '../config/uploadStorage.js';
 
 const router = Router();
-const uploadDir = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../../uploads');
-mkdirSync(uploadDir, { recursive: true });
 
 const extensions = { 'image/jpeg': '.jpg', 'image/png': '.png', 'image/webp': '.webp', 'image/avif': '.avif' };
 const upload = multer({

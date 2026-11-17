@@ -10,12 +10,10 @@ import adminRoutes from './routes/adminRoutes.js';
 import uploadRoutes from './routes/uploadRoutes.js';
 import siteSettingsRoutes from './routes/siteSettingsRoutes.js';
 import studentRoutes from './routes/studentRoutes.js';
-import path from 'node:path';
-import { fileURLToPath } from 'node:url';
+import { uploadDir } from './config/uploadStorage.js';
 import { notFound, errorHandler } from './middleware/errorHandler.js';
 
 const app = express();
-const uploadDir = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../uploads');
 app.use(helmet());
 app.use(cors({ origin: process.env.CLIENT_URL?.split(',') || 'http://localhost:5173' }));
 app.use(express.json({ limit: '1mb' }));
