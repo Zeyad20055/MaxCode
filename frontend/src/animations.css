@@ -1,0 +1,45 @@
+@keyframes pageRise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+@keyframes slideDown{from{opacity:0;transform:translateY(-14px)}to{opacity:1;transform:translateY(0)}}
+@keyframes gentleFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+@keyframes chipPop{0%{opacity:0;transform:scale(.82) translateY(8px)}70%{transform:scale(1.06) translateY(-2px)}100%{opacity:1;transform:scale(1) translateY(0)}}
+@keyframes orbitSpin{to{transform:rotate(360deg)}}
+@keyframes metricFill{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+
+.site-header{animation:slideDown .48s cubic-bezier(.2,.7,.2,1) both}
+.hero-copy .eyebrow{animation:pageRise .55s .06s both}.hero-copy h1{animation:pageRise .65s .12s both}.hero-copy>p{animation:pageRise .62s .2s both}.hero-actions{animation:pageRise .62s .28s both}.hero-proof{animation:pageRise .62s .36s both}
+.hero-visual{animation:gentleFloat 6s ease-in-out 1s infinite}.float-chip{animation:chipPop .65s .35s both}.chip-js{animation-delay:.48s}.chip-css{animation-delay:.6s}.orbit-one{animation:orbitSpin 48s linear infinite}.orbit-two{animation:orbitSpin 64s linear infinite reverse}
+.feature-card,.course-card,.group-directory-card,.public-student-card{animation:pageRise .58s cubic-bezier(.2,.7,.2,1) both}.feature-card:nth-child(2),.course-card:nth-child(2),.group-directory-card:nth-child(2),.public-student-card:nth-child(2){animation-delay:.06s}.feature-card:nth-child(3),.course-card:nth-child(3),.group-directory-card:nth-child(3),.public-student-card:nth-child(3){animation-delay:.12s}.feature-card:nth-child(4),.course-card:nth-child(4),.group-directory-card:nth-child(4),.public-student-card:nth-child(4){animation-delay:.18s}.feature-card:nth-child(5),.course-card:nth-child(5),.group-directory-card:nth-child(5),.public-student-card:nth-child(5){animation-delay:.24s}.feature-card:nth-child(6),.course-card:nth-child(6),.group-directory-card:nth-child(6),.public-student-card:nth-child(6){animation-delay:.3s}
+.section-heading,.about-graphic,.details-grid,.curriculum,.directory-heading,.contact-inner,.form-shell,.login-card,.admin-top,.admin-note{animation:pageRise .62s cubic-bezier(.2,.7,.2,1) both}
+.about-graphic{animation:pageRise .62s both,gentleFloat 7s ease-in-out 1s infinite}
+.admin-stat{animation:pageRise .5s both}.admin-stat:nth-child(2){animation-delay:.07s}.admin-stat:nth-child(3){animation-delay:.14s}.admin-stat:nth-child(4){animation-delay:.21s}
+.metric-track i{transform-origin:left center;animation:metricFill .9s cubic-bezier(.2,.7,.2,1) .25s both}
+.nav-links a,.brand-mark,.btn,.refresh-btn,.admin-nav button,.admin-home-link,.admin-logout,.contact-social,.group-directory-icon,.student-avatar,.public-student-avatar{transition:transform .22s ease,background-color .22s ease,color .22s ease,box-shadow .22s ease,border-color .22s ease}
+.nav-links a:hover{transform:translateY(-2px)}.brand:hover .brand-mark{transform:rotate(-8deg) scale(1.06);box-shadow:0 8px 22px #1455c033}.btn:active,.refresh-btn:active{transform:scale(.97)}.admin-nav button:hover,.admin-home-link:hover{transform:translateX(3px)}.contact-social[href]:hover .contact-social-icon,.group-directory-card:hover .group-directory-icon{transform:rotate(-7deg) scale(1.08)}
+.registration-form input,.registration-form textarea,.registration-form select,.login-card input,.admin-form input,.admin-form textarea,.admin-form select{transition:border-color .2s ease,box-shadow .2s ease,background-color .2s ease}
+.registration-form input:focus,.registration-form textarea:focus,.registration-form select:focus,.login-card input:focus,.admin-form input:focus,.admin-form textarea:focus,.admin-form select:focus{transform:translateY(-1px)}
+.student-card,.admin-stat{transition:transform .22s ease,box-shadow .22s ease}.student-card:hover,.admin-stat:hover{transform:translateY(-4px);box-shadow:0 16px 32px #102b5014}
+
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;transform:none!important}}
+
+/* MAX CODE palette polish and soft interaction states */
+:root{--max-navy:#102b50;--max-blue:#1455c0;--max-cyan:#42d7f5;--max-violet:#a76cff;--max-gold:#d4af37}
+@keyframes ambientDrift{0%,100%{transform:translate3d(0,0,0) scale(1);opacity:.72}50%{transform:translate3d(24px,-16px,0) scale(1.08);opacity:1}}
+.hero{background:linear-gradient(118deg,#0c2342 0%,#102b50 56%,#192c5d 100%)}
+.hero:after{content:"";position:absolute;width:440px;height:440px;right:14%;top:2%;border-radius:50%;background:radial-gradient(circle,rgba(66,215,245,.19),rgba(167,108,255,.09) 42%,transparent 72%);filter:blur(8px);pointer-events:none;animation:ambientDrift 12s ease-in-out infinite}
+.hero-grid,.hero-bottom{z-index:1}
+.hero h1 em{background:linear-gradient(95deg,#42d7f5 0%,#8ca8ff 53%,#d4af37 100%);background-clip:text;-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.brand-mark{background:linear-gradient(145deg,#102b50,#203f72 72%,#32276c);box-shadow:0 7px 18px #102b5022}
+.btn-blue{background:linear-gradient(110deg,#1455c0,#3279e8);box-shadow:0 8px 20px #1455c02b}
+.feature-icon{background:linear-gradient(145deg,#e8f8ff,#f1edff);color:#2866c3;transition:transform .25s ease,box-shadow .25s ease}
+.feature-card:hover .feature-icon{transform:translateY(-3px) rotate(-5deg);box-shadow:0 8px 18px #586bd01c}
+.course-card:hover{border-color:#b8d6fa;box-shadow:0 22px 48px #245cb51c}
+.course-art img,.details-art img{transition:transform .45s cubic-bezier(.2,.7,.2,1)}
+.course-card:hover .course-art img{transform:scale(1.045)}
+.code-art{background:radial-gradient(circle at 50% 45%,#3269ae,#183b69 48%,#25194f 100%)}
+.about-graphic{background:radial-gradient(circle at 24% 18%,#235c91 0%,#102b50 55%,#291b58 100%)}
+.contact-strip{background:linear-gradient(112deg,#102b50 0%,#173c69 68%,#30205e 100%)}
+.login-page{background:radial-gradient(ellipse at 18% 22%,#1b4774 0%,transparent 38%),radial-gradient(ellipse at 84% 82%,#30205e 0%,transparent 34%),#102b50}
+.admin-sidebar{background:linear-gradient(160deg,#102b50 0%,#132b4c 70%,#241d50 100%)}
+.nav-links a:focus-visible,.brand:focus-visible,.btn:focus-visible,button:focus-visible,.text-link:focus-visible{outline:3px solid #42d7f5;outline-offset:3px}
+
+@media(max-width:700px){.hero:after{width:300px;height:300px;right:-12%;top:18%}}

@@ -1,0 +1,12 @@
+import { Router } from 'express';
+import { createCourse, deleteCourse, getPublicCourse, listAdminCourses, listPublicCourses, updateCourse } from '../controllers/courseController.js';
+import { requireAuth } from '../middleware/auth.js';
+import { requirePermission } from '../middleware/authorize.js';
+const router = Router();
+router.get('/', listPublicCourses);
+router.get('/:slug', getPublicCourse);
+router.get('/admin/all/list', requireAuth, requirePermission('courses', 'VIEW'), listAdminCourses);
+router.post('/', requireAuth, requirePermission('courses', 'CREATE'), createCourse);
+router.patch('/:id', requireAuth, requirePermission('courses', 'EDIT'), updateCourse);
+router.delete('/:id', requireAuth, requirePermission('courses', 'DELETE'), deleteCourse);
+export default router;
